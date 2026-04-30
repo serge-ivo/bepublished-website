@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BePublished - Your voice, your book, published. AI-powered book authoring platform where you speak your ideas into existence and readers experience them their way.">
+    <title>BePublished - Your Voice, Your Book, Published</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'ink': '#1a1a2e',
+                        'parchment': '#faf8f5',
+                        'gold': '#c9a84c',
+                        'gold-light': '#e8d48b',
+                        'warm': '#f5f0e8',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #c9a84c, #e8d48b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .book-shadow {
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .spine {
+            background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, transparent 5%, transparent 95%, rgba(0,0,0,0.15) 100%);
+        }
+    </style>
+</head>
+<body class="bg-parchment text-ink font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-ink rounded-sm flex items-center justify-center">
+                        <span class="text-gold font-serif font-bold text-sm">B</span>
+                    </div>
+                    <span class="text-xl font-serif font-bold text-ink">BePublished</span>
+                </div>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#how-it-works" class="text-gray-600 hover:text-ink transition-colors font-medium">How It Works</a>
+                    <a href="#features" class="text-gray-600 hover:text-ink transition-colors font-medium">Features</a>
+                    <a href="#reading" class="text-gray-600 hover:text-ink transition-colors font-medium">For Readers</a>
+                </div>
+
+                <a href="https://app.bepublished.online" target="_blank" rel="noopener noreferrer">
+                    <button class="bg-ink text-white px-6 py-2.5 rounded-lg font-medium hover:bg-gray-800 transition-colors">
+                        Start Writing
+                    </button>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h1 class="font-serif text-5xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                        Your voice.<br>
+                        Your book.<br>
+                        <span class="gold-gradient">Published.</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-10 max-w-lg leading-relaxed">
+                        Speak your ideas. AI structures them into chapters. Readers experience your book their way — from concise summaries to deep dives.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://app.bepublished.online" target="_blank" rel="noopener noreferrer">
+                            <button class="bg-gold text-ink px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gold-light transition-colors">
+                                Publish Your Book
+                            </button>
+                        </a>
+                        <a href="#how-it-works">
+                            <button class="border border-gray-500 text-white px-8 py-4 rounded-lg font-medium text-lg hover:border-white transition-colors">
+                                See How It Works
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Book mockup -->
+                <div class="hidden lg:flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-96 bg-gradient-to-br from-amber-50 to-amber-100 rounded-r-lg rounded-l-sm book-shadow spine p-8 flex flex-col justify-between">
+                            <div>
+                                <div class="w-12 h-0.5 bg-gold mb-6"></div>
+                                <h3 class="font-serif text-2xl font-bold text-ink leading-tight">The Art of Thinking Clearly</h3>
+                                <p class="text-gray-500 mt-3 text-sm font-medium uppercase tracking-wider">A. Mikhailov</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-6 h-6 bg-ink rounded-sm flex items-center justify-center">
+                                    <span class="text-gold font-serif font-bold text-xs">B</span>
+                                </div>
+                                <span class="text-xs text-gray-400 font-medium">BePublished</span>
+                            </div>
+                        </div>
+                        <!-- Second book behind -->
+                        <div class="absolute -left-6 top-4 w-64 h-96 bg-gradient-to-br from-slate-700 to-slate-800 rounded-r-lg rounded-l-sm -z-10 opacity-60" style="transform: rotate(-3deg);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold text-ink mb-4">From voice to published book</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Three steps. No typing required.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center card-hover p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-ink rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-sm font-semibold text-gold uppercase tracking-wider mb-2">Step 1</div>
+                    <h3 class="font-serif text-2xl font-bold text-ink mb-3">Speak</h3>
+                    <p class="text-gray-600 leading-relaxed">Record your thoughts, ideas, and stories. Talk naturally — like telling a friend.</p>
+                </div>
+
+                <div class="text-center card-hover p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-ink rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-sm font-semibold text-gold uppercase tracking-wider mb-2">Step 2</div>
+                    <h3 class="font-serif text-2xl font-bold text-ink mb-3">Structure</h3>
+                    <p class="text-gray-600 leading-relaxed">AI transcribes your words, identifies key ideas, and structures them into polished chapters.</p>
+                </div>
+
+                <div class="text-center card-hover p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-ink rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <div class="text-sm font-semibold text-gold uppercase tracking-wider mb-2">Step 3</div>
+                    <h3 class="font-serif text-2xl font-bold text-ink mb-3">Publish</h3>
+                    <p class="text-gray-600 leading-relaxed">Your book goes live with a professional page. Share it with the world — one link, any reader.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-parchment">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold text-ink mb-4">Built for authors who think out loud</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to go from idea to published book.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-warm rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-ink mb-2">Voice-First Authoring</h3>
+                    <p class="text-gray-600 leading-relaxed">Record on web or iOS. Speak for 5 minutes or 5 hours. Your words become chapters.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-warm rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-ink mb-2">AI Chapter Structuring</h3>
+                    <p class="text-gray-600 leading-relaxed">Claude identifies key ideas, creates outlines, and drafts polished prose from your spoken thoughts.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-warm rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-ink mb-2">Adaptive Reading</h3>
+                    <p class="text-gray-600 leading-relaxed">Readers choose their level and style — from quick summaries to deep academic analysis. One book, infinite experiences.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl card-hover border border-gray-100">
+                    <div class="w-12 h-12 bg-warm rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-ink mb-2">Professional Book Pages</h3>
+                    <p class="text-gray-600 leading-relaxed">Every published book gets a beautiful, shareable page. Your work presented with the respect it deserves.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Readers -->
+    <section id="reading" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="font-serif text-4xl lg:text-5xl font-bold text-ink mb-6">Read any book,<br><span class="gold-gradient">your way</span></h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Every book on BePublished adapts to you. Choose how you want to experience it.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-warm rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-ink font-bold text-sm">TL;DR</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-ink mb-1">Quick Summary</h4>
+                                <p class="text-gray-600">Get the key ideas in minutes. Perfect for deciding what to read next.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-warm rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-ink mb-1">Standard Read</h4>
+                                <p class="text-gray-600">The full book as the author intended. Clean, polished prose.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-warm rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-ink mb-1">Deep Analysis</h4>
+                                <p class="text-gray-600">Academic-level depth with extended commentary and connections.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-warm rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-ink mb-1">Any Language</h4>
+                                <p class="text-gray-600">Read in your preferred language. The meaning preserved, naturally adapted.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reading levels visual -->
+                <div class="hidden lg:block">
+                    <div class="bg-parchment rounded-2xl p-8 border border-gray-200">
+                        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200">
+                            <div class="w-8 h-8 bg-ink rounded-sm flex items-center justify-center">
+                                <span class="text-gold font-serif font-bold text-xs">B</span>
+                            </div>
+                            <span class="font-serif font-bold text-ink">Reading Preferences</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-sm font-medium text-gray-500 uppercase tracking-wider">Level</label>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600">Child</span>
+                                    <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600">Teen</span>
+                                    <span class="px-3 py-1.5 bg-ink text-white rounded-lg text-sm font-medium">Adult</span>
+                                    <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600">Academic</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="text-sm font-medium text-gray-500 uppercase tracking-wider">Style</label>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600">TL;DR</span>
+                                    <span class="px-3 py-1.5 bg-ink text-white rounded-lg text-sm font-medium">Standard</span>
+                                    <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600">Detailed</span>
+                                    <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600">Humorous</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="text-sm font-medium text-gray-500 uppercase tracking-wider">Language</label>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="px-3 py-1.5 bg-ink text-white rounded-lg text-sm font-medium">English</span>
+                                    <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600">Russian</span>
+                                    <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600">Spanish</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Genres -->
+    <section class="py-24 bg-parchment">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold text-ink mb-4">Every genre. Every voice.</h2>
+                <p class="text-xl text-gray-600">From memoirs to business books, fiction to philosophy.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-6 rounded-xl text-center border border-gray-100 card-hover">
+                    <div class="text-2xl mb-2">memoir</div>
+                    <span class="text-sm font-medium text-gray-700">Memoir</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl text-center border border-gray-100 card-hover">
+                    <div class="text-2xl mb-2">business</div>
+                    <span class="text-sm font-medium text-gray-700">Business</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl text-center border border-gray-100 card-hover">
+                    <div class="text-2xl mb-2">fiction</div>
+                    <span class="text-sm font-medium text-gray-700">Fiction</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl text-center border border-gray-100 card-hover">
+                    <div class="text-2xl mb-2">philosophy</div>
+                    <span class="text-sm font-medium text-gray-700">Philosophy</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl text-center border border-gray-100 card-hover">
+                    <div class="text-2xl mb-2">self-help</div>
+                    <span class="text-sm font-medium text-gray-700">Self-Help</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl text-center border border-gray-100 card-hover">
+                    <div class="text-2xl mb-2">science</div>
+                    <span class="text-sm font-medium text-gray-700">Science</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl text-center border border-gray-100 card-hover">
+                    <div class="text-2xl mb-2">history</div>
+                    <span class="text-sm font-medium text-gray-700">History</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl text-center border border-gray-100 card-hover">
+                    <div class="text-2xl mb-2">non-fiction</div>
+                    <span class="text-sm font-medium text-gray-700">Non-Fiction</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 hero-gradient">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-serif text-4xl lg:text-6xl font-bold text-white mb-6">Ready to be published?</h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                You have a book inside you. Now you don't need to type it. Just speak — and let it become real.
+            </p>
+            <a href="https://app.bepublished.online" target="_blank" rel="noopener noreferrer">
+                <button class="bg-gold text-ink px-10 py-4 rounded-lg font-semibold text-lg hover:bg-gold-light transition-colors">
+                    Start Your Book
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-white py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-white/10 rounded-sm flex items-center justify-center">
+                            <span class="text-gold font-serif font-bold text-sm">B</span>
+                        </div>
+                        <span class="text-xl font-serif font-bold">BePublished</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Your voice, your book, published. The AI-powered platform where ideas become books.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4 text-gray-200">Platform</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#reading" class="hover:text-white transition-colors">For Readers</a></li>
+                        <li><a href="https://app.bepublished.online" class="hover:text-white transition-colors">Open App</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4 text-gray-200">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="mailto:hello@bepublished.online" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2026 BePublished. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth scrolling -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
